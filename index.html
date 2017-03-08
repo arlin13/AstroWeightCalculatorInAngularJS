@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <title>Astro weight calculator in AngularJS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>Astro weight Calculator</h1>
+    <hr>
+    <form ng-controller="HomeController as homeCtrl">
+      <div class="form-group">
+        <label>Weight:</label>
+        <input  type="number" ng-model="homeCtrl.weightInput"
+                min ="1" max ="500" placeholder="Enter your weight">
+      </div>
+      <div class="form-group">
+        <label>Planet:</label>
+        <select ng-model="homeCtrl.selectedGravity"
+                ng-options="planet.gravity as planet.name for planet in homeCtrl.planets">
+        </select>
+      </div>
+      <div class="form-group">
+        <button type="button" name="calculateButton"
+                class="btn btn-primary"
+                ng-click="homeCtrl.calculate()">Calculate!</button>
+      </div>
+      <hr>
+      <p>{{homeCtrl.resultText}}</p>
+{{2+4}}
+
+    </form>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/home/home.controller.js"></script>
+  </body>
+</html>
