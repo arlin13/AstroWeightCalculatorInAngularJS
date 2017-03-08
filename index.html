@@ -10,13 +10,16 @@
     <form ng-controller="HomeController as homeCtrl">
       <div class="form-group">
         <label>Weight:</label>
-        <input  type="number" ng-model="homeCtrl.weightInput"
-                min ="1" max ="500" placeholder="Enter your weight">
+        <input  class="form-control" type="number"
+                min ="1" max ="500" placeholder="Enter your weight"
+                ng-model="homeCtrl.weightInput">
       </div>
       <div class="form-group">
         <label>Planet:</label>
-        <select ng-model="homeCtrl.selectedGravity"
-                ng-options="planet.gravity as planet.name for planet in homeCtrl.planets">
+        <select class="form-control"
+                ng-model="homeCtrl.selectedPlanet"
+                ng-options="planet.name for planet in homeCtrl.planets">
+                <!-- ng-options="planet.gravity as planet.name for planet in homeCtrl.planets"> -->
         </select>
       </div>
       <div class="form-group">
@@ -25,9 +28,7 @@
                 ng-click="homeCtrl.calculate()">Calculate!</button>
       </div>
       <hr>
-      <p>{{homeCtrl.resultText}}</p>
-{{2+4}}
-
+      <h3>{{homeCtrl.resultText}}</h3>
     </form>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" >

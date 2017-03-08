@@ -16,13 +16,14 @@ function HomeController(){
     {name: 'Neptune', gravity: 1.148},
     {name: 'Pluto', gravity: 0.06}
   ];
-  vm.selectedGravity = vm.planets[0].gravity;
-
+  vm.weightInput = 150;
+  vm.selectedPlanet = vm.planets[0];
+  // vm.selectedGravity = vm.selectedPlanet.gravity;
+  // vm.selectName = vm.selectedPlanet.name;
 
   vm.calculate = function calculate(){
-vm.resultText = "hola";
-    // vm.weight = vm.weightInput * vm.selectedGravity;
-    // vm.resultText = "Your weight on planet "
-    //               + ", would be " + vm.weight + "!";
+    vm.weight = vm.weightInput * vm.selectedPlanet.gravity;
+    vm.resultText = "Your weight on planet " + vm.selectedPlanet.name
+                  + ", would be " + vm.weight.toFixed(2) + "!";
   }
 }
